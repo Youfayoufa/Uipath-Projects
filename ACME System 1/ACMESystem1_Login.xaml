@@ -1,0 +1,379 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ACMESystem1_Login" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="out_ACMEBrowser" Type="OutArgument(ui:Browser)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>928,5551</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ACMESystem1_Login_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="38">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.Outlook.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.Core.Activities.OCR.Engines</x:String>
+      <x:String>UiPath.Vision.Core.OCR</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="33">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Login to ACME System1" sap:VirtualizedContainerService.HintSize="895,5346" sap2010:WorkflowViewState.IdRef="Sequence_6">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Login to ACME System1" sap:VirtualizedContainerService.HintSize="853,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Login to ACME System1 Started&quot;]" />
+    <Sequence DisplayName="Check if LoggedOut" sap:VirtualizedContainerService.HintSize="853,658" sap2010:WorkflowViewState.IdRef="Sequence_11">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:Boolean" Name="IsLoggedIn" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Check if Logged already" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Checking if the user is logged out.&quot;]" />
+      <ui:UiElementExists DisplayName="Element Exists : Is loggedIn?" Exists="[IsLoggedIn]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
+        <ui:UiElementExists.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dbd6b48a-53d4-4d09-af94-33804eade0b3" InformativeScreenshot="e63e02a1eb92bd4c6f3f5c68934d85b9" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Dashboard' /&gt;&lt;webctrl tag='H1' aaname='                                                 Dashboard                                     ' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:UiElementExists.Target>
+      </ui:UiElementExists>
+      <If Condition="[IsLoggedIn]" DisplayName="If User  is logged in" sap:VirtualizedContainerService.HintSize="484,289" sap2010:WorkflowViewState.IdRef="If_5">
+        <If.Then>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ACMESystem1LogOut workflow" sap:VirtualizedContainerService.HintSize="341,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="ACME System 1\ACMESystem1LogOut.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </If.Then>
+      </If>
+    </Sequence>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="853,4294" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Variables>
+        <Variable x:TypeArguments="ss:SecureString" Name="Password" />
+        <Variable x:TypeArguments="x:String" Name="Username" />
+      </TryCatch.Variables>
+      <TryCatch.Try>
+        <Sequence DisplayName="ACMESystem1_Login" sap:VirtualizedContainerService.HintSize="739,2324" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;ACMESystemCredentials&quot;).ToString]" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="697,79" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[Password]" Username="[Username]" />
+          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe ACME'" sap:VirtualizedContainerService.HintSize="697,2113" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="450249a17ff61f3a8f9fb9d0f339fb3d" Selector="&lt;html app='chrome.exe' title='ACME*' /&gt;" UiBrowser="[out_ACMEBrowser]">
+            <ui:BrowserScope.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="663,1967" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:Boolean" Name="loginButtonExists" />
+                    <Variable x:TypeArguments="x:Boolean" Name="incorrectCred" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:UiElementExists DisplayName="Login button Exists" Exists="[loginButtonExists]" sap:VirtualizedContainerService.HintSize="621,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                    <ui:UiElementExists.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3c30d028-aec9-4ea1-9fbb-2343a7a985cc" InformativeScreenshot="3a14d14a05881c8c608c7a5fa14f0560" Selector="&lt;webctrl tag='BUTTON' type='submit' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+                    </ui:UiElementExists.Target>
+                  </ui:UiElementExists>
+                  <If Condition="[loginButtonExists]" DisplayName="If ACME System 1 is available" sap:VirtualizedContainerService.HintSize="621,1083" sap2010:WorkflowViewState.IdRef="If_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence DisplayName="Login Sequence" sap:VirtualizedContainerService.HintSize="376,926" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Login Page" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Login Page loaded and ready&quot;]" />
+                        <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="1-Type Into Username System 1" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[Username]">
+                          <ui:TypeInto.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="69be6f20-625d-4ed5-8613-57ce3bd27288" InformativeScreenshot="621e524eba351ebcf7d238e4e4402643" Selector="&lt;webctrl tag='INPUT' type='email' aaname='Email:' /&gt;" WaitForReady="INTERACTIVE">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                            </ui:Target>
+                          </ui:TypeInto.Target>
+                        </ui:TypeInto>
+                        <ui:TypeSecureText AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="1-Type Password System 1" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="TypeSecureText_1" SecureText="[Password]" SimulateType="True">
+                          <ui:TypeSecureText.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6c2091f4-f696-47c6-96ed-982ee7282175" InformativeScreenshot="5c0e5b9188c64a5c4290d68d2c276e41" Selector="&lt;webctrl tag='INPUT' type='password' aaname='Password:' /&gt;" WaitForReady="INTERACTIVE">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                            </ui:Target>
+                          </ui:TypeSecureText.Target>
+                        </ui:TypeSecureText>
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="1-Click Login" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition Position="Center">
+                              <ui:CursorPosition.OffsetX>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetX>
+                              <ui:CursorPosition.OffsetY>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetY>
+                            </ui:CursorPosition>
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="727c3520-c883-483b-9c0d-dd917ee65ee9" InformativeScreenshot="3a14d14a05881c8c608c7a5fa14f0560" Selector="&lt;webctrl tag='BUTTON' type='submit' aaname='                             Login                         ' /&gt;" WaitForReady="INTERACTIVE">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                        <ui:ImageFound DisplayName="Image Exists 'Incorrect Cred" Found="[incorrectCred]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ImageFound_1">
+                          <ui:ImageFound.Image>
+                            <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="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" />
+                          </ui:ImageFound.Image>
+                          <ui:ImageFound.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="a3fff64d-dcff-4c28-abd2-0d860903fee4" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+                          </ui:ImageFound.Target>
+                        </ui:ImageFound>
+                        <ui:LogMessage DisplayName="Incorrect Cred" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Incorrect Credentials is : &quot;+incorrectCred.ToString]" />
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Throw DisplayName="Throw: Acme System 1 not available" Exception="[new Exception(&quot;ACME System 1 not available&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                    </If.Else>
+                  </If>
+                  <If Condition="[incorrectCred]" sap:VirtualizedContainerService.HintSize="621,606" sap2010:WorkflowViewState.IdRef="If_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence DisplayName="Sequence Incorrect Credentials" sap:VirtualizedContainerService.HintSize="376,430" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:SendOutlookMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Account="[in_Config(&quot;RobotEmail0&quot;).ToString]" Body="[in_Config(&quot;InCorrectCredEmailBody&quot;).ToString]" DisplayName="Send Outlook Mail Message: Incorrect Credentias" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="True" IsDraft="False" Sensitivity="Normal" Subject="[in_Config(&quot;InCorrectCredEmailSubject&quot;).ToString]" To="[in_Config(&quot;SupportEmailAddress&quot;).ToString]">
+                          <ui:SendOutlookMail.Files>
+                            <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                          </ui:SendOutlookMail.Files>
+                        </ui:SendOutlookMail>
+                        <ui:LogMessage DisplayName="Incorrect Cred-Sending Alert email" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Incorrect Cred-Alert email sent&quot;]" />
+                        <Throw DisplayName="Throw : Incorrect Credentials" Exception="[New Exception(&quot;Incorrect Credentials&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                      </Sequence>
+                    </If.Then>
+                  </If>
+                </Sequence>
+              </ActivityAction>
+            </ui:BrowserScope.Body>
+          </ui:BrowserScope>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="819,1660" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Login Sequence: ACME System 1 not available Or Incorrect Cred" sap:VirtualizedContainerService.HintSize="813,1591" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If Condition="[exception.Message.Contains(&quot;Incorrect Credentials&quot;) = True]" DisplayName="If Exception is Incorrect Cred" sap:VirtualizedContainerService.HintSize="771,1499" sap2010:WorkflowViewState.IdRef="If_3">
+                <If.Then>
+                  <Rethrow sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+                </If.Then>
+                <If.Else>
+                  <Sequence DisplayName="Sequence ACME is not Available" sap:VirtualizedContainerService.HintSize="526,1341" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:Boolean" Name="Dashboardxists" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:RefreshBrowser Browser="[out_ACMEBrowser]" DisplayName="Refresh Browser" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="RefreshBrowser_1" />
+                    <ui:NavigateTo Browser="[out_ACMEBrowser]" DisplayName="Navigate To ACME System 1" sap:VirtualizedContainerService.HintSize="484,59" sap2010:WorkflowViewState.IdRef="NavigateTo_3" Url="[in_Config(&quot;ACMESystem1URL&quot;).ToString]" />
+                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="2-Type Into Username System 1" EmptyField="True" sap:VirtualizedContainerService.HintSize="484,134" sap2010:WorkflowViewState.IdRef="TypeInto_4" SimulateType="True" Text="[Username]">
+                      <ui:TypeInto.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="69be6f20-625d-4ed5-8613-57ce3bd27288" InformativeScreenshot="621e524eba351ebcf7d238e4e4402643" Selector="&lt;webctrl tag='INPUT' type='email' aaname='Email:' /&gt;" WaitForReady="INTERACTIVE">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                        </ui:Target>
+                      </ui:TypeInto.Target>
+                    </ui:TypeInto>
+                    <ui:TypeSecureText AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="2-Type Password System 1" EmptyField="True" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="TypeSecureText_4" SecureText="[Password]" SimulateType="True">
+                      <ui:TypeSecureText.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6c2091f4-f696-47c6-96ed-982ee7282175" InformativeScreenshot="5c0e5b9188c64a5c4290d68d2c276e41" Selector="&lt;webctrl tag='INPUT' type='password' aaname='Password:' /&gt;" WaitForReady="INTERACTIVE">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                        </ui:Target>
+                      </ui:TypeSecureText.Target>
+                    </ui:TypeSecureText>
+                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="2-Click Login" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                      <ui:Click.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </ui:Click.CursorPosition>
+                      <ui:Click.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="727c3520-c883-483b-9c0d-dd917ee65ee9" InformativeScreenshot="3a14d14a05881c8c608c7a5fa14f0560" Selector="&lt;webctrl tag='BUTTON' type='submit' aaname='                             Login                         ' /&gt;" WaitForReady="INTERACTIVE">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                        </ui:Target>
+                      </ui:Click.Target>
+                    </ui:Click>
+                    <ui:UiElementExists DisplayName="Element Exists: Dashboard" Exists="[Dashboardxists]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                      <ui:UiElementExists.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0e800b67-87e0-4040-8583-008731ed3e57" InformativeScreenshot="e63e02a1eb92bd4c6f3f5c68934d85b9" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Dashboard' /&gt;&lt;webctrl tag='H1' aaname='                                                 Dashboard                                     ' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+                      </ui:UiElementExists.Target>
+                    </ui:UiElementExists>
+                    <If Condition="[Dashboardxists.Equals(False)]" sap:VirtualizedContainerService.HintSize="484,476" sap2010:WorkflowViewState.IdRef="If_4">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence DisplayName="Send Mail as ACME is not Available" sap:VirtualizedContainerService.HintSize="376,299" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:SendOutlookMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Account="[in_Config(&quot;RobotEmail0&quot;).ToString]" Body="[in_Config(&quot;ACMESystem1NotAvailable&quot;).ToString]" DisplayName="Send Outlook Mail Message: ACMEnot available" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_2" Importance="Normal" IsBodyHtml="True" IsDraft="False" Sensitivity="Normal" Subject="[in_Config(&quot;ACMESystem1NotAvailableEmailSubject&quot;).ToString]" To="[in_Config(&quot;SupportEmailAddress&quot;).ToString]">
+                            <ui:SendOutlookMail.Files>
+                              <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                            </ui:SendOutlookMail.Files>
+                          </ui:SendOutlookMail>
+                          <Rethrow sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Rethrow_2" />
+                        </Sequence>
+                      </If.Then>
+                    </If>
+                  </Sequence>
+                </If.Else>
+              </If>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <ui:LogMessage DisplayName="Loging to ACME System 1 End" sap:VirtualizedContainerService.HintSize="853,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Loging to ACME System 1 Ended&quot;]" />
+  </Sequence>
+</Activity>
