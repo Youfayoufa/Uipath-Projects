@@ -1,13 +1,14 @@
 {
   "name": "Verify Account Positions",
+  "projectId": "9a550d2b-c378-4555-8b0c-09055fa024bb",
   "description": "Compare the transactions of system 1 and system 3. If there are differences, mark them in the work item.",
   "main": "Main.xaml",
   "dependencies": {
     "Microsoft.Activities": "[1.0.1]",
-    "UiPath.Excel.Activities": "[2.12.2-preview]",
-    "UiPath.Mail.Activities": "[1.15.0-preview]",
-    "UiPath.System.Activities": "[22.4.0-preview]",
-    "UiPath.UIAutomation.Activities": "[22.4.2-preview]"
+    "UiPath.Excel.Activities": "[2.22.3]",
+    "UiPath.Mail.Activities": "[1.22.0-preview]",
+    "UiPath.System.Activities": "[23.10.3]",
+    "UiPath.UIAutomation.Activities": "[23.10.7]"
   },
   "webServices": [],
   "entitiesStores": [],
@@ -21,6 +22,7 @@
     "isAttended": false,
     "requiresUserInteraction": true,
     "supportsPersistence": false,
+    "workflowSerialization": "DataContract",
     "excludedLoggedData": [
       "Private:*",
       "*password*"
@@ -28,7 +30,8 @@
     "executionType": "Workflow",
     "readyForPiP": false,
     "startsInPiP": false,
-    "mustRestoreAllDependencies": false
+    "mustRestoreAllDependencies": false,
+    "pipType": "ChildSession"
   },
   "designOptions": {
     "projectProfile": "Developement",
@@ -41,7 +44,8 @@
       "ignoredFiles": []
     },
     "fileInfoCollection": [],
-    "modernBehavior": false
+    "modernBehavior": false,
+    "saveToCloud": false
   },
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
